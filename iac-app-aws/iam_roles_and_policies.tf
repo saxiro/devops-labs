@@ -11,7 +11,7 @@ resource "aws_iam_role" "CodeDeploy_test" {
       "Principal": {
         "Service": [
           "sns.amazonaws.com",
-          "codedeploy.us-east-1.amazonaws.com"
+          "codedeploy.${var.aws_region}.amazonaws.com"
         ]
       },
       "Action": "sts:AssumeRole"
