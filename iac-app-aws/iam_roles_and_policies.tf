@@ -1,5 +1,5 @@
 resource "aws_iam_role" "CodeDeploy_test" {
-  name = "CodeDeploy_test"
+  name = "CodeDeploy_test_${var.aws_region}"
 
   assume_role_policy = <<EOF
 {
@@ -22,7 +22,7 @@ EOF
 }
 
 resource "aws_iam_role" "EC2CodeDeploy_test" {
-  name = "EC2CodeDeploy_test"
+  name = "EC2CodeDeploy_test_${var.aws_region}"
 
   assume_role_policy = <<EOF
 {
@@ -42,7 +42,7 @@ EOF
 }
 
 resource "aws_iam_role_policy" "CodeDeployPolicy" {
-  name = "CodeDeployPolicy"
+  name = "CodeDeployPolicy_${var.aws_region}"
   role = "${aws_iam_role.CodeDeploy_test.id}"
 
   policy = <<EOF
@@ -74,7 +74,7 @@ EOF
 }
 
 resource "aws_iam_role_policy" "EC2CodeDeployPolicy" {
-  name = "EC2CodeDeployPolicy"
+  name = "EC2CodeDeployPolicy_${var.aws_region}"
   role = "${aws_iam_role.EC2CodeDeploy_test.id}"
 
   policy = <<EOF
@@ -92,4 +92,9 @@ resource "aws_iam_role_policy" "EC2CodeDeployPolicy" {
     ]
 }
 EOF
+}
+
+resource "aws_iam_instance_profile" "iam_instance_profile_app_prod" {
+  name = "iam_instance_profile_app_prod_${var.aws_region}"
+  role = "${aws_iam_role.EC2CodeDeploy_test.name}"
 }

@@ -7,17 +7,27 @@ variable "vpc_cidr" {
   default = "10.0.0.0/16"
 }
 
-variable "public_subnet_cidr" {
-  description = "CIDR for the public subnet"
+variable "public_subnet_cidr_primary" {
+  description = "CIDR for the public subnet - primary"
   default = "10.0.1.0/24"
 }
 
-variable "private_subnet_cidr" {
-  description = "CIDR for the private subnet"
+variable "public_subnet_cidr_secondary" {
+  description = "CIDR for the public subnet - secondary"
   default = "10.0.2.0/24"
+}
+
+variable "public_subnet_cidr_tertiary" {
+  description = "CIDR for the public subnet - tertiary"
+  default = "10.0.3.0/24"
+}
+
+variable "private_subnet_cidr_primary" {
+  description = "CIDR for the private subnet"
+  default = "10.0.4.0/24"
 }
 
 variable "key_path" {
   description = "SSH Public Key path"
-  default = "~/.ssh/aws.pem"
+  default = "keys/aws_"
 }

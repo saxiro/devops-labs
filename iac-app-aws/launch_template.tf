@@ -13,13 +13,8 @@ data "aws_ami" "amzn2" {
 
   owners = ["amazon"]
 }
-
-resource "aws_iam_instance_profile" "iam_instance_profile_app_prod" {
-  name = "iam_instance_profile_app_prod"
-  role = "${aws_iam_role.EC2CodeDeploy_test.name}"
-}
 resource "aws_launch_template" "app_prod_launch_template" {
-  name = "app-prod-launch-template"
+  name = "app-prod-launch-template_${var.aws_region}"
   image_id = "${data.aws_ami.amzn2.id}"
   instance_initiated_shutdown_behavior = "terminate"
   instance_type = "t2.micro"
