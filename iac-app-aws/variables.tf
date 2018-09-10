@@ -27,6 +27,19 @@ variable "private_subnet_cidr_primary" {
   default = "10.0.4.0/24"
 }
 
+variable "bootstrap_path" {
+  description = "Script to install Host utils"
+  default = "install-host.sh"
+}
+
+variable "aws_access_key" { 
+  default = ""
+}
+
+variable "aws_secret_access_key" { 
+  default = ""
+}
+
 variable "key_path" {
   description = "SSH Public Key path"
   default = "keys/aws_"
