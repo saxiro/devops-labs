@@ -3,7 +3,7 @@ resource "aws_codedeploy_app" "app" {
   compute_platform = "Server" // Server => EC2/On-premises; Lambda => AWS Lambda functions
 }
 
-resource "aws_codedeploy_deployment_group" "example" {
+resource "aws_codedeploy_deployment_group" "app_prod" {
   app_name              = "${aws_codedeploy_app.app.name}"
   deployment_group_name = "app-prod"
   service_role_arn      = "${aws_iam_role.CodeDeploy_test.arn}"
