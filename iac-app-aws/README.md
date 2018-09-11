@@ -41,6 +41,10 @@ rm -f terraform_${TF_VERSION}_${TF_ARCH}.zip
 ./iac-helper.sh us-east-1 apply
 ```
 
+#### Reach a record
+
+Estimated infrastructure build time and the first "Cold" deployment of CodePipeline: !!!**1 min 53 seg**!!!
+
 ### Destroy VPC
 
 ```sh
