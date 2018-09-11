@@ -7,8 +7,10 @@
 
 ## Installation
 
-* AWS Permissions:
+* **AWS Permissions**:
  - **Full Admin**;
+
+* **GitHub Personal Access Token for Deployment** (`GITHUB_TOKEN`). For more details, [GitHub Docs - Creating a Personal Access Token for the Command Line](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
 
 * AWS Credentials:
 
@@ -16,6 +18,7 @@
 export AWS_ACCESS_KEY_ID=AKIA...
 export AWS_SECRET_ACCESS_KEY=V0BUy....
 export AWS_DEFAULT_REGION=us-east-...
+export GITHUB_TOKEN=f030ef...
 ```
 
 ## Download and Initialize Terraform
