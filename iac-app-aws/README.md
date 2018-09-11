@@ -59,3 +59,5 @@ rm -f terraform_${TF_VERSION}_${TF_ARCH}.zip
 * 1 **Auto Scaling Group** {asg_app_prod};
 * 1 **CodeDeploy Application** {app};
 * 1 **CodeDeploy Deployment Group** {app-prod};
+* 1 **S3 Bucket** {app_codepipeline_bucket};
+* 1 **CodePipeline** app {app};
