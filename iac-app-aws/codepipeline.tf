@@ -38,7 +38,7 @@ resource "aws_codepipeline" "app" {
     name = "Deploy"
 
     action {
-      name            = "App - Prod"
+      name            = "App-Prod"
       category        = "Deploy"
       owner           = "AWS"
       provider        = "CodeDeploy"
