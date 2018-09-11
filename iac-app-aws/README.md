@@ -7,12 +7,11 @@
 
 ## Installation
 
-* **AWS Permissions**:
- - **Full Admin**;
+* **AWS Permissions**: **Full Admin**;
+* **GitHub Personal Access Token for Deployment** (`GITHUB_TOKEN`). 
+For more details, [GitHub Docs - Creating a Personal Access Token for the Command Line](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
 
-* **GitHub Personal Access Token for Deployment** (`GITHUB_TOKEN`). For more details, [GitHub Docs - Creating a Personal Access Token for the Command Line](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
-
-* AWS Credentials:
+* **AWS Credentials** and **GITHUB_TOKEN** environment variables:
 
 ```
 export AWS_ACCESS_KEY_ID=AKIA...
