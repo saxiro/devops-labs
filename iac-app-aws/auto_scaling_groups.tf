@@ -1,9 +1,10 @@
 resource "aws_autoscaling_group" "asg_app_prod" {
   name = "asg-app-prod"
-  desired_capacity = 1
-  max_size = 1
-  min_size = 1
-  vpc_zone_identifier = ["${aws_subnet.public_subnet_primary.id}"]
+  desired_capacity = 0
+  max_size = 0
+  min_size = 0
+  #availability_zones = ["us-east-1a"] # descomentar em caso de criação de net interface
+  vpc_zone_identifier = ["${aws_subnet.public_subnet_primary.id}"] # comentar em caso de criação de net interface
   termination_policies = ["OldestInstance"]
   
   launch_template = {

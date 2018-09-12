@@ -101,3 +101,8 @@ resource "aws_route_table_association" "web_public_rt_tertiary" {
   subnet_id = "${aws_subnet.public_subnet_tertiary.id}"
   route_table_id = "${aws_route_table.web_public_rt_tertiary.id}"
 }
+
+# resource "aws_network_interface" "test" {
+#   subnet_id       = "${aws_subnet.public_subnet_primary.id}"
+#   security_groups = ["${aws_security_group.app_prod_sg.id}"]
+# }

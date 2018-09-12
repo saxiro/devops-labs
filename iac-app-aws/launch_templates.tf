@@ -19,7 +19,6 @@ resource "aws_launch_template" "app_prod_launch_template" {
   instance_initiated_shutdown_behavior = "terminate"
   instance_type = "t2.micro"
   key_name = "${aws_key_pair.default.id}"
-  #user_data = "${base64encode(file("${var.bootstrap_path}"))}"
   user_data = "${base64encode(data.template_file.host_base_config.rendered)}"
 
   iam_instance_profile {
@@ -34,6 +33,7 @@ resource "aws_launch_template" "app_prod_launch_template" {
     associate_public_ip_address = true
     security_groups = ["${aws_security_group.app_prod_sg.id}"]
     delete_on_termination = true
+    # network_interface_id = "${aws_network_interface.test.id}"
   }
 
   tag_specifications {
