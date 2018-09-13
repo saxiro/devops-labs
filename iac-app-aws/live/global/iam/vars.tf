@@ -4,3 +4,8 @@ variable "user_names" {
   type = "list"
   default = ["joe", "bob", "susan"]
 }
+
+variable "enable_special_user" {
+  description = "Enable or disable special user"
+  default = false
+}

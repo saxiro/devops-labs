@@ -28,3 +28,18 @@ resource "aws_iam_user" "iam_user" {
   name = "${element(var.user_names, count.index)}"
 }
 
+# IfElse : counting technique
+# if var.enable_special_user == true
+#   Create user "special-user-first"
+# else
+#   Create user "special-user-second"
+# endif
+resource "aws_iam_user" "iam_user_special_first" {
+  count = "${var.enable_special_user}"
+  name = "special-user-first"
+}
+
+resource "aws_iam_user" "iam_user_special_second" {
+  count = "${1 - var.enable_special_user}" # inversion
+  name = "special-user-second"
+}

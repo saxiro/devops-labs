@@ -42,3 +42,10 @@ cenários de uso, devemos sempre pensar em termos de cluster.
 ./terraform destroy -auto-approve live/stage/services/webapp-cluster-simple-instance
 ```
 
+## Implantações de outros exemplos
+
+### Criação de 3 usuários do IAM com anexação de policies automatizados com loop e condicionais
+
+```sh
+./terraform apply -auto-approve live/global/iam
+```
